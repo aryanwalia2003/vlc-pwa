@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>VLC-PWA</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/icon.svg" />
+  <link rel="apple-touch-icon" href="/icons/icon-180.png" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="VLC-PWA" />
+  <meta name="theme-color" content="#1e1e1e" />
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <div id="sidebarHeader">
+      <h1>Library</h1>
+      <button id="uploadBtn" title="Upload from Files">+</button>
+      <input id="uploadInput" type="file" multiple hidden
+        accept="video/*,audio/*,.mkv,.avi,.mov,.srt,.vtt,.ass,.ssa,.sub" />
+    </div>
+    <div id="tracks"></div>
+  </div>
+  <div id="main">
+    <div id="stage">
+      <video id="player" playsinline></video>
+    </div>
+    <div id="controls">
+      <div id="seekRow">
+        <input id="seek" type="range" min="0" max="1000" value="0" />
+        <span id="time">0:00 / 0:00</span>
+      </div>
+      <div id="buttonsRow">
+        <button id="prev" title="Previous">⏮</button>
+        <button id="playpause" title="Play/Pause">▶</button>
+        <button id="next" title="Next">⏭</button>
+        <button id="mute" title="Mute">🔊</button>
+        <input id="volume" type="range" min="0" max="100" value="100" />
+        <button id="audioBtn" title="Audio Track">🌐</button>
+        <button id="subBtn" title="Subtitles">CC</button>
+        <button id="fullscreen" title="Fullscreen">⛶</button>
+      </div>
+    </div>
+  </div>
+  <div id="menu" class="menu hidden"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
